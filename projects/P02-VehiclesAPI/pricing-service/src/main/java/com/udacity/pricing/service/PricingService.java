@@ -1,6 +1,7 @@
 package com.udacity.pricing.service;
 
 import com.udacity.pricing.domain.price.Price;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -12,6 +13,7 @@ import java.util.stream.LongStream;
 /**
  * Implements the pricing service to get prices for each vehicle.
  */
+@Service
 public class PricingService {
 
     /**
@@ -28,7 +30,7 @@ public class PricingService {
      * @return price of the requested vehicle
      * @throws PriceException vehicleID was not found
      */
-    public static Price getPrice(Long vehicleId) throws PriceException {
+    public Price getPrice(Long vehicleId) throws PriceException {
 
         if (!PRICES.containsKey(vehicleId)) {
             throw new PriceException("Cannot find price for Vehicle " + vehicleId);
