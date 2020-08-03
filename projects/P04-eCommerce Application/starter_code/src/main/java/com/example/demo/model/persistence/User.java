@@ -20,7 +20,7 @@ public class User {
 	private String username;
 
 	@Column(nullable = false)
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+	@JsonProperty
 	private String password;
 
 	@OneToOne(cascade = CascadeType.ALL)
